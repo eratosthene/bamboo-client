@@ -142,6 +142,7 @@ module Bamboo
       class Result
         def initialize(data, http)
           @data = data
+          pp(@data) if $DEBUG
           @http = http
 
           @changes = nil
