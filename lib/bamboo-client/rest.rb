@@ -185,8 +185,7 @@ module Bamboo
         end
 
         def artifacts
-          pp(@data) if $DEBUG
-          details.fetch("artifacts")
+          details(:expand => "artifacts").fetch("artifacts")
         end
 
         def number
@@ -222,8 +221,8 @@ module Bamboo
 
         private
 
-        def details
-          @details ||= @http.get(uri).data
+        def details(params = nil)
+          @details ||= @http.get(uri, params).data
         end
 
         def fetch_details(expand)
