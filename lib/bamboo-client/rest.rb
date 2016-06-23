@@ -46,7 +46,7 @@ module Bamboo
       end
 
       def results_for(key)
-        get("result/#{URI.escape key}").data, @http
+        Result.new get("result/#{URI.escape key}").data, @http
       end
 
       def plan_for(key)
