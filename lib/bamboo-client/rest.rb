@@ -142,7 +142,6 @@ module Bamboo
       class Result
         def initialize(data, http)
           @data = data
-          pp(@data) if $DEBUG
           @http = http
 
           @changes = nil
@@ -186,6 +185,7 @@ module Bamboo
         end
 
         def artifacts
+          pp(@data) if $DEBUG
           details.fetch("artifacts")
         end
 
