@@ -184,6 +184,10 @@ module Bamboo
           Time.parse details.fetch('buildCompletedTime')
         end
 
+        def artifacts
+          details.fetch("artifacts")
+        end
+
         def number
           @data['number']
         end
