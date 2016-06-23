@@ -47,7 +47,8 @@ module Bamboo
 
       def results_for(key)
 #        Result.new get("result/#{URI.escape key}",{"expand"=>"artifacts"}).data, @http
-        doc = @http.get File.join(SERVICE,"result/#{URI.escape key}"), {"expand"=>"artifacts"}
+        #doc = @http.get File.join(SERVICE,"result/#{URI.escape key}"), {"expand"=>"artifacts"}
+        doc = get("result/#{URI.escape key}",{"expand"=>"artifacts"})
         Result.new doc.data, @http
       end
 
